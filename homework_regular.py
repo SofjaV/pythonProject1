@@ -27,8 +27,6 @@ time = '''Завтрак в 09:00.
 37:98
 25:63'''
 
-with open('time.txt', 'r') as file:
-    data = file.read()
 pattern = re.compile(r'\b([01][0-9]|2[0-4]):([0-5][0-9]\b)')
 matches = pattern.finditer(time)
 for match in matches:
