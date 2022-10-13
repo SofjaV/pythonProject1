@@ -7,7 +7,7 @@ with open('colors.txt', 'r') as file:
 pattern = re.compile(r'#[0-9A-F]{6}')
 matches = pattern.finditer(data)
 for match in matches:
-    print(match) #80 colors= 80 lines
+    print(match)
 
 # 2. Создать запрос для определения в тексте цифр, за которыми не стоит знак +. (Примеры выражений “2*9-6*5” или (3+5)-9*4)
 number = '''“2*9-6*5”
