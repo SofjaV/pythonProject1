@@ -33,22 +33,27 @@ time.sleep(3)
 #basket
 basket_btn = driver.find_element('xpath', '//*[@id="shopping_cart_container"]/a')
 basket_btn.click()
+saucedemo = driver.current_window_handle
 time.sleep(3)
-# saucedemo = driver.current_window_handle
+
 
 #screenshoots
-# driver.switch_to.new_window('tab')
-# driver.get('https://www.saucedemo.com/inventory-item.html?id=4')
-div = driver.find_element('xpath', '//*[@id="cart_contents_container"]/div/div[1]/div[3]/div[2]')
+driver.switch_to.new_window('tab')
+driver.get('https://www.saucedemo.com/inventory-item.html?id=4')
+div = driver.find_element('id', 'inventory_item_container')
 div.screenshot('screenshot1.png')
-
-# driver.switch_to.new_window('tab')
-# driver.get('https://www.saucedemo.com/inventory-item.html?id=1')
-div = driver.find_element('xpath', '//*[@id="cart_contents_container"]/div/div[1]/div[4]')
-div.screenshot('screenshot2.png')
+# driver.close()
 time.sleep(3)
 
-# driver.switch_to.window(saucedemo)
+driver.switch_to.new_window('tab')
+driver.get('https://www.saucedemo.com/inventory-item.html?id=1')
+div = driver.find_element('id', 'inventory_item_container')
+div.screenshot('screenshot2.png')
+# driver.close()
+time.sleep(3)
+
+driver.switch_to.window(saucedemo)
+time.sleep(3)
 check_out = driver.find_element('xpath','//*[@id="checkout"]')
 check_out.click()
 time.sleep(5)
@@ -61,7 +66,7 @@ last_name.send_keys('Smith')
 
 postal_code = driver.find_element('id', 'postal-code')
 postal_code.send_keys('11111')
-time.sleep(5)
+time.sleep(3)
 
 continue_btn = driver.find_element('xpath', '//*[@id="continue"]')
 continue_btn.click()
@@ -84,6 +89,15 @@ logout = driver.find_element('id','logout_sidebar_link')
 logout.click()
 time.sleep(5)
 driver.quit()
+
+
+
+
+
+
+
+
+
 
 
 
